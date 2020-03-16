@@ -16,7 +16,7 @@ class CreateInvoicesTable extends Migration
         Schema::create('invoices', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('invoice_mat')->nullable();
-            $table->bigInteger('auth_id')->unsigned()->index()->nullable();
+            $table->bigInteger('user_id')->unsigned()->index()->nullable();
             $table->bigInteger('tax_id')->unsigned()->index()->nullable();
             $table->bigInteger('assujetti_id')->unsigned()->index()->nullable();
             $table->bigInteger('transport_id')->unsigned()->index()->nullable();
@@ -25,7 +25,7 @@ class CreateInvoicesTable extends Migration
         });
 
         Schema::table('invoices', function($table){
-            $table->foreign('auth_id')->references('id')->on('auths');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('tax_id')->references('id')->on('taxes');
             $table->foreign('assujetti_id')->references('id')->on('assujettis');
             $table->foreign('transport_id')->references('id')->on('transports');

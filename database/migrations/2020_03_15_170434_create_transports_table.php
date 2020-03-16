@@ -26,9 +26,16 @@ class CreateTransportsTable extends Migration
             $table->string('address');
             $table->string('card_number_id', 100);
             $table->string('chassis_number', 100);
+            $table->string('texid_mat', 100)->nullable();
             $table->enum('transpot_type', ['M', 'V'])->default('M');
             $table->enum('conductor_state', ['C', 'P'])->default('C');
+            $table->bigInteger('taxe_id')->unsigned()->index()->nullable();
+            $table->enum('deleted', [0, 1])->default(0);
             $table->timestamps();
+        });
+
+        Schema::table('transports', function($table){
+            $table->foreign('taxe_id')->references('id')->on('taxes');
         });
     }
 

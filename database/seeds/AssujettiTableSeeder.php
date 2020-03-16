@@ -12,6 +12,6 @@ class AssujettiTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Assujetti::class, 200)->create();
+        factory(Assujetti::class, 20)->create();
     }
 }

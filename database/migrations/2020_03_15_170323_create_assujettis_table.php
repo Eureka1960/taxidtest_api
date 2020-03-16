@@ -20,7 +20,14 @@ class CreateAssujettisTable extends Migration
             $table->string('id_nat');
             $table->string('tax_number');
             $table->string('address');
+            $table->string('texid_mat')->nullable();
+            $table->bigInteger('taxe_id')->unsigned()->index()->nullable();
+            $table->enum('deleted', [0, 1])->default(0);
             $table->timestamps();
+        });
+
+        Schema::table('assujettis', function($table){
+            $table->foreign('taxe_id')->references('id')->on('taxes');
         });
     }
 

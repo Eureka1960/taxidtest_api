@@ -19,12 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-//Auth API
-Route::get('/auth', 'AuthController@index');
-Route::get('/auth/{auth}', 'AuthController@show');
-Route::post('/auth', 'AuthController@store');
-Route::put('/auth/{auth}', 'AuthController@update');
-Route::delete('/auth/{auth}', 'AuthController@delete');
+//User API
+Route::post('/user_register', 'Api\AuthController@register');
+Route::post('/user_login', 'Api\AuthController@login');
 
 //Assujettis API
 Route::get('/assujetti', 'AssujettiController@index');
