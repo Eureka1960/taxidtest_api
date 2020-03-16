@@ -18,6 +18,8 @@ class CreateInvoicesTable extends Migration
             $table->string('invoice_mat')->nullable();
             $table->bigInteger('auth_id')->unsigned()->index()->nullable();
             $table->bigInteger('tax_id')->unsigned()->index()->nullable();
+            $table->bigInteger('assujetti_id')->unsigned()->index()->nullable();
+            $table->bigInteger('transport_id')->unsigned()->index()->nullable();
             $table->boolean('paid')->default(false);
             $table->timestamps();
         });
@@ -25,6 +27,8 @@ class CreateInvoicesTable extends Migration
         Schema::table('invoices', function($table){
             $table->foreign('auth_id')->references('id')->on('auths');
             $table->foreign('tax_id')->references('id')->on('taxes');
+            $table->foreign('assujetti_id')->references('id')->on('assujettis');
+            $table->foreign('transport_id')->references('id')->on('transports');
         });
     }
 
