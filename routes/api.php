@@ -48,6 +48,11 @@ Route::put('/register/{invoice}', 'InvoiceController@update');
 Route::delete('/register/{invoice}', 'InvoiceController@destroy');
 
 //Taxe API
+Route::get('/taxe', 'TaxeController@index');
+Route::get('/taxe/{taxe}', 'TaxeController@show');
+Route::post('/taxe', 'TaxeController@store');
+Route::put('/taxe/{taxe}', 'TaxeController@update');
+Route::delete('/taxe/{taxe}', 'TaxeController@destroy');
 
 
 

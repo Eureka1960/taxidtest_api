@@ -27,7 +27,7 @@ class TaxeController extends Controller
         return $request->all();
     }
 
-    public function create(Request $request)
+    public function store(Request $request)
     {
         return Taxe::create($this->localValidation($request));
     }
