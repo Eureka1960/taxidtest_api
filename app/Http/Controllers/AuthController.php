@@ -50,6 +50,7 @@ class AuthController extends Controller
 
     public function update(Auth $auth, Request $request)
     {
+        dd($auth);
         $auth->update($this->localValidation($request));
         return $auth;
     }

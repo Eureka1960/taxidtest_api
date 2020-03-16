@@ -33,13 +33,21 @@ Route::post('/assujetti', 'AssujettiController@store');
 Route::put('/assujetti/{assujetti}', 'AssujettiController@update');
 Route::delete('/assujetti/{assujetti}', 'AssujettiController@destroy');
 
-//Transport
+//Transport API
 Route::get('/transport', 'TransportController@index');
 Route::get('/transport/{transport}', 'TransportController@show');
 Route::post('/transport', 'TransportController@store');
 Route::put('/transport/{transport}', 'TransportController@update');
 Route::delete('/transport/{transport}', 'TransportController@destroy');
-Route::get('/transport/edit/{transport}', 'TransportController@destroy');
+
+//Invoice API
+Route::get('/register', 'InvoiceController@index');
+Route::get('/register/{invoice}', 'InvoiceController@show');
+Route::post('/register', 'InvoiceController@store');
+Route::put('/register/{invoice}', 'InvoiceController@update');
+Route::delete('/register/{invoice}', 'InvoiceController@destroy');
+
+//Taxe API
 
 
 

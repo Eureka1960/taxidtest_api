@@ -80,8 +80,8 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="title m-b-md" style="color:indigo">
+                    TAXID API APP
                 </div>
 
                 <div class="links">
