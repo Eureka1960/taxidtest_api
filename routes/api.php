@@ -39,4 +39,7 @@ Route::get('/transport/{transport}', 'TransportController@show');
 Route::post('/transport', 'TransportController@store');
 Route::put('/transport/{transport}', 'TransportController@update');
 Route::delete('/transport/{transport}', 'TransportController@destroy');
+Route::get('/transport/edit/{transport}', 'TransportController@destroy');
+
+
 
